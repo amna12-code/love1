@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unlock Your Fate</title>
+
+<style>
+
+body{
+
+margin:0;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+background:linear-gradient(135deg,#0f172a,#312e81,#581c87);
+
+overflow:hidden;
+
+font-family:Georgia,serif;
+
+}
+
+h1{
+
+color:white;
+
+margin-bottom:50px;
+
+text-align:center;
+
+}
+
+.keys{
+
+display:flex;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.key{
+
+font-size:80px;
+
+cursor:pointer;
+
+transition:.5s;
+
+}
+
+.key:hover{
+
+transform:translateY(-10px) scale(1.1);
+
+}
+
+.card{
+
+display:none;
+
+background:white;
+
+padding:35px;
+
+border-radius:25px;
+
+max-width:550px;
+
+text-align:center;
+
+box-shadow:0 0 40px rgba(255,255,255,.25);
+
+animation:show 1s ease;
+
+}
+
+.card h2{
+
+color:#7c3aed;
+
+}
+
+.card p{
+
+font-size:22px;
+
+line-height:1.8;
+
+color:#444;
+
+}
+
+@keyframes show{
+
+from{
+
+opacity:0;
+
+transform:scale(.7);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 id="title">
+
+🔑 One key belongs to you...
+
+</h1>
+
+<div class="keys" id="keys">
+
+<div class="key" onclick="choose(this)">🗝️</div>
+
+<div class="key" onclick="choose(this)">🗝️</div>
+
+<div class="key" onclick="choose(this)">🗝️</div>
+
+<div class="key" onclick="choose(this)">🗝️</div>
+
+<div class="key" onclick="choose(this)">🗝️</div>
+
+</div>
+
+<div class="card" id="card">
+
+<h2>For You ✨</h2>
+
+<p>
+
+Some doors open only once.<br><br>
+
+I'm glad this one led me to you.<br><br>
+
+You are more special than you know. ❤️
+
+</p>
+
+</div>
+
+<script>
+
+function choose(selected){
+
+let keys=document.querySelectorAll('.key');
+
+keys.forEach(k=>{
+
+if(k!==selected){
+
+k.style.display='none';
+
+}
+
+});
+
+selected.style.transform='scale(2)';
+
+setTimeout(()=>{
+
+document.getElementById('title').style.display='none';
+
+document.getElementById('keys').style.display='none';
+
+document.getElementById('card').style.display='block';
+
+},1200);
+
+}
+
+</script>
+
+</body>
+
+</html>
